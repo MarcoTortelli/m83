@@ -1,4 +1,1 @@
-if (condition) {
-    print;
-} else {
-}
+

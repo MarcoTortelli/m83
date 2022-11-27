@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'media-queries';
+
 %align-center {
     display: flex;
     align-items: center;
@@ -10,7 +11,7 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem calc((100vw - 1200px) / 2);
+
     z-index: 10;
     position: relative;
 
@@ -18,29 +19,52 @@
         font-size: 2rem;
         margin-left: 24px;
         img {
-            height: 96px;
+            height: 82px;
         }
         @extend %align-center;
     }
-    &-bars {
+
+    &-button {
+        background: $claro;
         opacity: 0;
+        border: none;
+        cursor: pointer;
+
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        &-bar {
+            height: 3px;
+            width: 100%;
+            background: $cinza-escuro;
+            border-radius: 10px;
+        }
         @include tablet {
             color: $cinza-escuro;
             opacity: 1;
             position: absolute;
-            top: 22px;
+            top: 29px;
             right: 20px;
             font-size: 2rem;
+            margin-left: 1rem;
         }
     }
 
-    &-menu {
+    &-menu,
+    ul {
         @extend %align-center;
         list-style: none;
         text-align: center;
         margin-right: 24px;
         @include tablet {
-            display: none;
+          
+            flex-direction: column;
+            align-items: flex-end;
+            background: $claro;
+            margin-right: 0px;
         }
 
         &-links {
@@ -49,7 +73,6 @@
             justify-content: center;
             text-decoration: none;
             padding: 0 1rem;
-
             &:hover {
                 color: $roxo-escuro;
                 transition: all 0.3s ease;
@@ -62,11 +85,27 @@
             border-radius: 4px;
             background: $roxo-claro;
             margin-left: 16px;
-
-            &:hover{
+            &:hover {
                 color: $roxo-escuro;
                 background: $roxo;
             }
+            @include tablet {
+                margin-left: 0px;
+                padding: 0 1rem;
+                color: $cinza-escuro;
+                text-decoration: none;
+                background: $claro;
+                &:hover {
+                    color: $cinza-escuro;
+                    background: $claro;
+                }
+                margin-bottom: 1rem;
+            }
         }
+    }
+    @include tablet {
+        flex-direction: column;
+        height: 100%;
+        font-size: 1.5rem;
     }
 }

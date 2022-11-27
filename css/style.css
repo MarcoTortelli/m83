@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
-.navbar-menu-links, .navbar-menu, .navbar-logo {
+.navbar-menu-links,
+.navbar ul-links, .navbar-menu,
+.navbar ul, .navbar-logo {
   display: flex;
   align-items: center;
 }
@@ -10,7 +12,6 @@
   height: 80px;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1200px) / 2);
   z-index: 10;
   position: relative;
 }
@@ -19,42 +20,66 @@
   margin-left: 24px;
 }
 .navbar-logo img {
-  height: 96px;
+  height: 82px;
 }
-.navbar-bars {
+.navbar-button {
+  background: #f8f8f8;
   opacity: 0;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+.navbar-button-bar {
+  height: 3px;
+  width: 100%;
+  background: #132238;
+  border-radius: 10px;
 }
 @media screen and (max-width: 768px) {
-  .navbar-bars {
+  .navbar-button {
     color: #132238;
     opacity: 1;
     position: absolute;
-    top: 22px;
+    top: 29px;
     right: 20px;
     font-size: 2rem;
+    margin-left: 1rem;
   }
 }
-.navbar-menu {
+.navbar-menu,
+.navbar ul {
   list-style: none;
   text-align: center;
   margin-right: 24px;
 }
 @media screen and (max-width: 768px) {
-  .navbar-menu {
-    display: none;
+  .navbar-menu,
+.navbar ul {
+    flex-direction: column;
+    align-items: flex-end;
+    background: #f8f8f8;
+    margin-right: 0px;
   }
 }
-.navbar-menu-links {
+.navbar-menu-links,
+.navbar ul-links {
   color: #132238;
   justify-content: center;
   text-decoration: none;
   padding: 0 1rem;
 }
-.navbar-menu-links:hover {
+.navbar-menu-links:hover,
+.navbar ul-links:hover {
   color: #39075a;
   transition: all 0.3s ease;
 }
-.navbar-menu #button {
+.navbar-menu #button,
+.navbar ul #button {
   padding: 12px 24px;
   border: none;
   outline: none;
@@ -62,9 +87,33 @@
   background: #d3bff9;
   margin-left: 16px;
 }
-.navbar-menu #button:hover {
+.navbar-menu #button:hover,
+.navbar ul #button:hover {
   color: #39075a;
   background: #66279e;
+}
+@media screen and (max-width: 768px) {
+  .navbar-menu #button,
+.navbar ul #button {
+    margin-left: 0px;
+    padding: 0 1rem;
+    color: #132238;
+    text-decoration: none;
+    background: #f8f8f8;
+    margin-bottom: 1rem;
+  }
+  .navbar-menu #button:hover,
+.navbar ul #button:hover {
+    color: #132238;
+    background: #f8f8f8;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: 100%;
+    font-size: 1.5rem;
+  }
 }
 
 * {
