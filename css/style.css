@@ -116,6 +116,10 @@
   }
 }
 
+.active {
+  display: none;
+}
+
 * {
   padding: 0;
   margin: 0;

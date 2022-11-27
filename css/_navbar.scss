@@ -60,7 +60,6 @@
         text-align: center;
         margin-right: 24px;
         @include tablet {
-          
             flex-direction: column;
             align-items: flex-end;
             background: $claro;
@@ -108,4 +107,8 @@
         height: 100%;
         font-size: 1.5rem;
     }
+}
+
+.active{
+    display: none;
 }
