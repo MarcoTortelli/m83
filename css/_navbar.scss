@@ -29,7 +29,6 @@
         opacity: 0;
         border: none;
         cursor: pointer;
-
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -42,6 +41,7 @@
             background: $cinza-escuro;
             border-radius: 10px;
         }
+
         @include tablet {
             color: $cinza-escuro;
             opacity: 1;
@@ -60,6 +60,7 @@
         text-align: center;
         margin-right: 24px;
         @include tablet {
+            
             flex-direction: column;
             align-items: flex-end;
             background: $claro;
@@ -108,7 +109,6 @@
         font-size: 1.5rem;
     }
 }
-
-.active{
+.active {
     display: none;
 }
