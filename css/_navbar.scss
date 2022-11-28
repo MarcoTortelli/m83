@@ -5,13 +5,20 @@
     display: flex;
     align-items: center;
 }
+
+.remove-menu {
+    display: none;
+}
+
+.add-menu {
+    display: flex;
+}
 .navbar {
     background: $claro;
     color: $cinza-escuro;
     height: 80px;
     display: flex;
     justify-content: space-between;
-
     z-index: 10;
     position: relative;
 
@@ -26,11 +33,10 @@
 
     &-button {
         background: $claro;
-        opacity: 0;
+        display: none;
         border: none;
         cursor: pointer;
         position: absolute;
-        display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 30px;
@@ -44,12 +50,13 @@
 
         @include tablet {
             color: $cinza-escuro;
-            opacity: 1;
+            display: flex;
             position: absolute;
             top: 29px;
             right: 20px;
             font-size: 2rem;
             margin-left: 1rem;
+            transition: all 0.3s;
         }
     }
 
@@ -65,8 +72,9 @@
             align-items: flex-end;
             background: $claro;
             margin-right: 0px;
+            margin-bottom: 10px;
+            
         }
-
         &-links {
             @extend %align-center;
             color: $cinza-escuro;
@@ -78,30 +86,6 @@
                 transition: all 0.3s ease;
             }
         }
-        #button {
-            padding: 12px 24px;
-            border: none;
-            outline: none;
-            border-radius: 4px;
-            background: $roxo-claro;
-            margin-left: 16px;
-            &:hover {
-                color: $roxo-escuro;
-                background: $roxo;
-            }
-            @include tablet {
-                margin-left: 0px;
-                padding: 0 1rem;
-                color: $cinza-escuro;
-                text-decoration: none;
-                background: $claro;
-                &:hover {
-                    color: $cinza-escuro;
-                    background: $claro;
-                }
-                margin-bottom: 1rem;
-            }
-        }
     }
     @include tablet {
         flex-direction: column;
@@ -109,6 +93,4 @@
         font-size: 1.5rem;
     }
 }
-.active {
-    display: none;
-}
+
